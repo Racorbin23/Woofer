@@ -1,0 +1,58 @@
+.setup-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  width: 100vw;
+  height: 100vh;
+}
+
+.setup-input {
+  display: inline-block;
+  background-color: white;
+
+  justify-content: right;
+  align-items: center;
+
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  margin-top: 1%;
+  padding: 1%;
+  box-sizing: border-box;
+  width: 30vw;
+}
+
+.upload-button {
+  display: inline-block;
+  background-color: #7ed6df;
+
+  justify-content: right;
+  align-items: center;
+
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  margin-top: 1%;
+  padding: 1%;
+  box-sizing: border-box;
+  width: 30vw;
+}
+
+.setup-submit-button {
+  display: inline-block;
+  background-color: #f0932b;
+
+  justify-content: right;
+  align-items: center;
+
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  margin-top: 1%;
+  padding: 1%;
+  box-sizing: border-box;
+  width: 30vw;
+}

@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Login from "./Pages/Login/Login";
+
+import UserContext from "./Contexts/UserContext";
+import Dashboard from "./Pages/Dashboard/Dashboard";
 
 function App() {
+  const [user, setUser] = useState({});
+  const [profileData, setProfileData] = useState({});
+  console.log(user);
+
+  var content;
+
+  if (user && Object.keys(user).length === 0) {
+    content = <Login />;
+  } else {
+    content = <Dashboard />;
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <UserContext.Provider
+        value={{ user, setUser, profileData, setProfileData }}
+      >
+        {content}
+      </UserContext.Provider>
     </div>
   );
 }

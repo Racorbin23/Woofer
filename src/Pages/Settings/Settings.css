@@ -1,0 +1,73 @@
+.settings-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  width: 100vw;
+  height: 84vh;
+
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.settings-content-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  width: 100vw;
+  height: 84vh;
+
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.settings-input-label {
+}
+
+.settings-input {
+  display: inline-block;
+  background-color: white;
+
+  justify-content: right;
+  align-items: center;
+
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  margin-top: 1%;
+  padding: 1%;
+  box-sizing: border-box;
+  width: 50vw;
+  font-size: 2vh;
+}
+
+.update-button {
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  margin-top: 1%;
+  padding: 1%;
+  box-sizing: border-box;
+  width: 40vw;
+  background-color: #7ed6df;
+  font-size: 2vh;
+}
+
+.signout-button {
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  margin-top: 1%;
+  padding: 1%;
+  box-sizing: border-box;
+  width: 40vw;
+  background-color: #f0932b;
+  font-size: 2vh;
+}
+
+.profile-picture {
+  border-radius: 50%;
+  width: 256px;
+  height: 256px;
+}
