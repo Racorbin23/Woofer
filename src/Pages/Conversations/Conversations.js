@@ -24,20 +24,22 @@ function Conversations() {
 
     if (Object.keys(usr.profileData).length > 2) {
       const tConvos = [];
-      console.log(current);
       usr.profileData.conversations.forEach((item, i) => {
         if (current === "") {
           if (item !== "") {
-            console.log("False Item : ", item);
             tConvos.push(
-              <Convo id={item} open={false} setCurrent={setCurrent} />
+              <Convo
+                key={item}
+                id={item}
+                open={false}
+                setCurrent={setCurrent}
+              />
             );
           }
         } else {
           if (item !== "" && current === item) {
-            console.log("True Item : ", item);
             tConvos.push(
-              <Convo id={item} open={true} setCurrent={setCurrent} />
+              <Convo key={item} id={item} open={true} setCurrent={setCurrent} />
             );
           }
         }
@@ -60,8 +62,6 @@ function Convo({ id, open, setCurrent }) {
   const [recipientImage, setImage] = useState("");
 
   useEffect(() => {
-    console.log(id);
-    console.log(convoData);
     if (Object.keys(convoData).length < 1) {
       console.log("No convo data! - Syncing Convo!");
       SYNC_CONVERSATION(id, setData);
@@ -91,8 +91,6 @@ function Convo({ id, open, setCurrent }) {
   }, [convoData, recipientImage, recipientProfile]);
 
   if (open === true) {
-    console.log("OPEN CONVO ID: ", id);
-    console.log(convoData);
     return (
       <OpenConvo
         id={id}
@@ -121,7 +119,6 @@ function ClosedConvo({ id, data, recData, recImg, setCurrent }) {
       <div
         className="closed-wrapper"
         onClick={() => {
-          console.log("Opening Convo! ", id);
           setCurrent(id);
         }}
       >
@@ -140,9 +137,20 @@ function ClosedConvo({ id, data, recData, recImg, setCurrent }) {
 }
 
 function OpenConvo({ id, data, recData, recImg, setCurrent }) {
+  const [msg, setMessage] = useState("");
+  const [chat, setChat] = useState([]);
+
+  useEffect(() => {
+    const tMsgs = [];
+    console.log(data.history);
+    data.history.forEach((item, i) => {
+      console.log(item);
+      tMsgs.push(<ChatMessage author={item.author} content={item.contents} />);
+    });
+    setChat(tMsgs);
+  }, []);
+
   if (Object.keys(data).length > 1) {
-    console.log(`ID: ${id}`);
-    console.log(data);
     return (
       <div className="open-wrapper">
         <div className="open-top">
@@ -158,23 +166,45 @@ function OpenConvo({ id, data, recData, recImg, setCurrent }) {
 
           <img src={recImg} alt="Pic" className="open-img" />
         </div>
-        <div className="open-body">
-          <div>{id}</div>
-        </div>
+        <div className="open-body">{chat}</div>
         <div className="open-bottom">
           <input
+            placeholder="Type Here..."
             className="open-input"
             onChange={(e) => {
-              console.log("Typing in input");
-              console.log(data);
+              setMessage(e.target.value);
             }}
           />
-          <button className="open-send-button">SEND</button>
+          <button
+            className="open-send-button"
+            onClick={() => {
+              console.log("Sending Message");
+            }}
+          >
+            SEND
+          </button>
         </div>
       </div>
     );
   } else {
     return <div></div>;
+  }
+}
+
+function ChatMessage({ author, content }) {
+  const usr = useContext(UserContext);
+  if (usr.user.uid === author) {
+    return (
+      <div className="chat-container-sender">
+        <div className="chat-sent">{content}</div>
+      </div>
+    );
+  } else {
+    return (
+      <div className="chat-container-receiver">
+        <div className="chat-receiver">{content}</div>
+      </div>
+    );
   }
 }
 
