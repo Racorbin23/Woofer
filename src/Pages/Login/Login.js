@@ -47,7 +47,7 @@ function Login() {
           LOG IN
         </button>
       </div>
-      <div>or</div>
+      <div className="login-or">or</div>
       <button
         className="signup-button"
         onClick={() => {

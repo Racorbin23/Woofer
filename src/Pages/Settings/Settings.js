@@ -31,36 +31,33 @@ function Settings() {
         <div className="settings-name-label">
           Hello, {usr.profileData.name}!
         </div>
-        <div className="settings-input-label">Bio</div>
+
         <input
-          placeholder={usr.profileData.bio}
+          placeholder="New Bio"
           className="settings-input"
           onChange={(e) => {
             setNewBio(e.target.value);
           }}
         />
 
-        <div className="settings-input-label">Pet</div>
         <input
-          placeholder={usr.profileData.pet}
+          placeholder="New Pet"
           className="settings-input"
           onChange={(e) => {
             setNewPet(e.target.value);
           }}
         />
 
-        <div className="settings-input-label">Pet Age</div>
         <input
-          placeholder={usr.profileData.pet_age}
+          placeholder="New Pet Age"
           className="settings-input"
           onChange={(e) => {
             setNewPetAge(e.target.value);
           }}
         />
 
-        <div className="settings-input-label">Pet Type</div>
         <input
-          placeholder={usr.profileData.pet_type}
+          placeholder="New Pet Type"
           className="settings-input"
           onChange={(e) => {
             setNewPetType(e.target.value);

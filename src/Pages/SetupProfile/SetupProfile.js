@@ -12,7 +12,7 @@ function SetupProfile() {
 
   return (
     <div className="setup-wrapper">
-      <div>Please Fill in the Information Below</div>
+      <div className="setup-title">Please Fill in the Information Below</div>
       <input
         placeholder="NAME"
         className="setup-input"

@@ -9,6 +9,10 @@
   height: 100vh;
 }
 
+.setup-title {
+  font-size: 2rem;
+}
+
 .setup-input {
   display: inline-block;
   background-color: white;
@@ -20,43 +24,51 @@
   outline: none;
   border-radius: 3px;
   margin-top: 1%;
-  padding: 1%;
+  padding: 2%;
   box-sizing: border-box;
-  width: 30vw;
+
+  font-size: 2rem;
+  height: clamp(5vh, 10vh, 15vh);
+  width: clamp(300px, 60vw, 600px);
 }
 
 .upload-button {
   display: inline-block;
   background-color: #7ed6df;
 
-  justify-content: right;
+  justify-content: center;
   align-items: center;
+  text-align: center;
 
   border: none;
   outline: none;
   border-radius: 3px;
-  margin-top: 1%;
+  margin-top: 5%;
   padding: 1%;
   box-sizing: border-box;
-  width: 30vw;
+  font-size: 1.5rem;
+  color: black;
+  height: auto;
+  width: clamp(300px, 60vw, 600px);
 }
 
 .setup-submit-button {
   display: inline-block;
-  background-color: #f0932b;
-
-  justify-content: right;
-  align-items: center;
-
   border: none;
   outline: none;
   border-radius: 3px;
+  box-sizing: border-box;
+
   margin-top: 1%;
   padding: 1%;
-  box-sizing: border-box;
-  width: 30vw;
-  cursor: pointer;
 
+  font-size: 3rem;
+  color: black;
+  height: clamp(5vh, 10vh, 15vh);
+  width: clamp(300px, 60vw, 600px);
+  background-color: #f0932b;
+
+  cursor: pointer;
   transition: all 0.3s;
 }
 

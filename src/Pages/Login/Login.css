@@ -28,28 +28,34 @@
   outline: none;
   border-radius: 3px;
   margin-top: 1%;
-  padding: 1%;
+  padding: 3%;
   box-sizing: border-box;
-  width: 50vw;
-  font-size: 2vh;
+  width: clamp(300px, 60vw, 600px);
+  font-size: 4vh;
 }
 
 .login-button {
   border: none;
   outline: none;
   border-radius: 3px;
+  box-sizing: border-box;
+
   margin-top: 1%;
   padding: 1%;
-  box-sizing: border-box;
-  width: 40vw;
+
+  font-size: 3rem;
+  color: black;
+  height: clamp(5vh, 10vh, 15vh);
+  width: clamp(300px, 60vw, 600px);
   background-color: #f0932b;
-  font-size: 2vh;
+
   cursor: pointer;
   transition: all 0.3s;
 }
 
 .login-button:hover {
   background-color: #b16106;
+  color: black;
   transition: all 0.3s;
 }
 
@@ -60,22 +66,29 @@
   margin-top: 1%;
   padding: 1%;
   box-sizing: border-box;
-  width: 40vw;
+  font-size: 3rem;
+  height: clamp(5vh, 10vh, 15vh);
+  width: clamp(300px, 60vw, 600px);
   background-color: #38d6e7;
-  font-size: 2vh;
+  color: black;
   transition: all 0.3s;
   cursor: pointer;
 }
 
 .signup-button:hover {
   background-color: #0ea0b1;
+  color: black;
   transition: all 0.3s;
 }
 
 .login-title {
-  font-size: 2.5rem;
+  font-size: 4rem;
 }
 
 .login-error-message {
   color: rgb(201, 37, 37);
+}
+
+.login-or {
+  font-size: 3rem;
 }

@@ -1,3 +1,10 @@
+.app {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
 .nav-top-wrapper {
   display: flex;
   flex-direction: row;
@@ -49,6 +56,8 @@
 
 .nav-icon {
   background-color: transparent;
+  width: 200%;
+  height: 200%;
 }
 
 .dashboard {

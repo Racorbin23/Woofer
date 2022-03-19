@@ -9,7 +9,18 @@
 }
 
 .matching-pic {
-  width: 50vw;
+  width: clamp(200px, 400px, 600px);
+  height: clamp(200px, 400px, 600px);
+  align-items: center;
+  justify-content: center;
+}
+
+.matching-pic-wrapper {
+  width: 100vw;
+  height: 45vh;
+
+  align-items: center;
+  justify-content: center;
 }
 
 .matching-name {

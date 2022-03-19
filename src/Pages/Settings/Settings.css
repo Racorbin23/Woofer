@@ -22,7 +22,12 @@
   text-align: center;
 }
 
+.settings-name-label {
+  font-size: 3rem;
+}
+
 .settings-input-label {
+  font-size: 2rem;
 }
 
 .settings-input {
@@ -38,8 +43,14 @@
   margin-top: 1%;
   padding: 1%;
   box-sizing: border-box;
-  width: 50vw;
-  font-size: 2vh;
+  font-size: 2rem;
+  height: clamp(5vh, 7vh, 10vh);
+  width: clamp(300px, 60vw, 600px);
+}
+
+.settings-input-wrapper {
+  display: flex;
+  flex-direction: row;
 }
 
 .update-button {
@@ -49,10 +60,13 @@
   margin-top: 1%;
   padding: 1%;
   box-sizing: border-box;
-  width: 40vw;
+
+  font-size: 2rem;
+  height: clamp(5vh, 7vh, 10vh);
+  width: clamp(300px, 60vw, 600px);
   background-color: #7ed6df;
+  color: black;
   transition: all 0.3s;
-  font-size: 2vh;
 }
 
 .update-button:hover {
@@ -65,12 +79,15 @@
   outline: none;
   border-radius: 3px;
   margin-top: 1%;
+  margin-bottom: 1%;
   padding: 1%;
   box-sizing: border-box;
-  width: 40vw;
+  font-size: 2rem;
+  height: clamp(5vh, 7vh, 10vh);
+  width: clamp(300px, 60vw, 600px);
   background-color: #f0932b;
+  color: black;
   transition: all 0.3s;
-  font-size: 2vh;
 }
 
 .signout-button:hover {

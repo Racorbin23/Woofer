@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import {
   DOWNLOAD_PROFILE_PICTURE,
   POP_QUEUE,
-  GET_PROFILE,
+  SYNC_PROFILE,
   UPDATE_QUEUE,
   MATCH_USERS,
   UPDATE_PROFILE,
@@ -42,7 +42,7 @@ function Matching() {
       } else if (matchKey !== "" && Object.keys(match).length < 1) {
         // #3
         console.log("Found Match Key! - Downloading profile data");
-        GET_PROFILE(matchKey, setMatch);
+        SYNC_PROFILE(matchKey, setMatch);
       } else if (Object.keys(match).length !== 0 && matchImage === "") {
         // #4
         console.log("Match profile picture missing! Downloading!");
@@ -59,7 +59,9 @@ function Matching() {
     return (
       <div className="matching-wrapper">
         <div>
-          <img src={matchImage} alt="UnknownMatch" className="matching-pic" />
+          <div className="matching-pic-wrapper">
+            <img src={matchImage} alt="UnknownMatch" className="matching-pic" />
+          </div>
           <div className="matching-name">{match.name}</div>
           <div className="matching-pet">{match.pet}</div>
         </div>
