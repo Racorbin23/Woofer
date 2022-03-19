@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.b154c8f2.css",
-    "main.js": "/static/js/main.d6eea106.js",
-    "index.html": "/index.html",
-    "main.b154c8f2.css.map": "/static/css/main.b154c8f2.css.map",
-    "main.d6eea106.js.map": "/static/js/main.d6eea106.js.map"
+    "main.css": "/Woofer/static/css/main.b154c8f2.css",
+    "main.js": "/Woofer/static/js/main.d234551a.js",
+    "index.html": "/Woofer/index.html",
+    "main.b154c8f2.css.map": "/Woofer/static/css/main.b154c8f2.css.map",
+    "main.d234551a.js.map": "/Woofer/static/js/main.d234551a.js.map"
   },
   "entrypoints": [
     "static/css/main.b154c8f2.css",
-    "static/js/main.d6eea106.js"
+    "static/js/main.d234551a.js"
   ]
 }
