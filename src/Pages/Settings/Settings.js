@@ -15,7 +15,7 @@ function Settings() {
   const [newPet, setNewPet] = useState("");
   const [newPetAge, setNewPetAge] = useState("");
   const [newPetType, setNewPetType] = useState("");
-  console.log("OPening Settings");
+
   useEffect(() => {
     DOWNLOAD_PROFILE_PICTURE(usr.user.uid, setProfilePicture);
   }, [usr]);
@@ -84,7 +84,6 @@ function Settings() {
               newData.pet_type = newPetType;
             }
             console.log("Updating Date to ");
-            console.log(newData);
             setNewBio("");
             setNewPet("");
             setNewPetAge("");

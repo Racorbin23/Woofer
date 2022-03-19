@@ -7,7 +7,6 @@ import Dashboard from "./Pages/Dashboard/Dashboard";
 function App() {
   const [user, setUser] = useState({});
   const [profileData, setProfileData] = useState({});
-  console.log(user);
 
   var content;
 

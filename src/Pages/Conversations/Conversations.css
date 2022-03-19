@@ -1,188 +1,86 @@
 .conversations-wrapper {
-  width: 100vw;
-  height: 84vh;
+  display: flex;
+  flex-direction: column;
 
   align-items: center;
   justify-content: center;
-  text-align: center;
 }
 
-.shortcut-wrapper {
+.closed-wrapper {
   display: flex;
   flex-direction: row;
-
-  border-style: solid;
-  border-color: #f2f2f2;
 }
 
-.shortcut-body {
+.closed-img {
+}
+
+.closed-right-wrapper {
   display: flex;
   flex-direction: column;
 }
 
-.shortcut-img {
-  width: 100px;
-  height: 100px;
-
-  border-radius: 50px;
-
-  margin-top: 1%;
-  margin-bottom: 1%;
-  margin-left: 3%;
-  margin-right: 3%;
+.closed-name {
 }
 
-.shortcut-rec-name {
-  display: flex;
-  font-size: 2rem;
+.closed-msg {
 }
 
-.shortcut-message {
-  display: flex;
-  font-size: 1.5rem;
-  font-weight: 500;
-}
-
-.shortcut-message-wrapper {
-  display: flex;
-  flex-direction: row;
-}
-
-.shortcut-message-time {
-  display: flex;
-}
-
-.open-convo-wrapper {
+.open-wrapper {
   display: flex;
   flex-direction: column;
+
+  width: 100vw;
   height: 84vh;
-  width: 100vw;
+
+  align-items: center;
 }
-.open-convo-top {
+
+.open-top {
   display: flex;
   flex-direction: row;
-  align-items: center;
+
   justify-content: center;
-  height: 15vh;
+
+  gap: 22vw;
   width: 100vw;
-}
-.open-convo-bottom {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
   height: 10vh;
-  width: 100vw;
 }
-.open-convo-input {
-  display: inline-block;
-  background-color: white;
 
-  justify-content: right;
+.open-back-button {
+  width: 20vw;
+  height: 100%;
+
+  align-items: flex-start;
+}
+
+.open-name {
+  width: 20vw;
+  height: 100%;
+
   align-items: center;
-
-  border: none;
-  outline: none;
-  border-radius: 3px;
-  margin-top: 1%;
-  padding: 1%;
-  box-sizing: border-box;
-  width: 60vw;
-  height: 6vh;
   margin-top: 2vh;
-  margin-bottom: 2vh;
-  margin-right: 2vw;
+  font-size: 3rem;
 }
 
-.open-convo-send-button {
-  display: inline-block;
-  background-color: #f0932b;
-
-  justify-content: right;
-  align-items: center;
-
-  border: none;
-  outline: none;
-  border-radius: 3px;
-  margin-top: 1%;
-  margin-bottom: 1%;
-  padding: 1%;
-  box-sizing: border-box;
-
-  width: 10vw;
-  height: 5vh;
+.open-img {
+  align-items: end;
 }
 
-.open-convo {
+.open-bottom {
+  display: flex;
+  flex-direction: row;
+}
+
+.open-input {
+}
+
+.open-send-button {
+}
+
+.open-body {
   display: flex;
   flex-direction: column;
 
-  height: 80vh;
-  width: 80vw;
-  background-color: #f2f2f2;
-  margin-left: 10vw;
-  margin-right: 10vw;
-
-  border-radius: 5%;
-}
-
-.open-convo-back-button {
-  display: inline-block;
-  background-color: #f0932b;
-
-  justify-content: right;
-  align-items: center;
-
-  border: none;
-  outline: none;
-  font-size: 1.5rem;
-  border-radius: 3px;
-  margin-top: 1%;
-  margin-bottom: 1%;
-  padding: 1%;
-  box-sizing: border-box;
-
-  width: 20vw;
-  height: 8vh;
-}
-
-.open-convo-name {
-  width: 60vw;
-  height: 8vh;
-
-  padding-top: 6vh;
-  font-size: 2rem;
-  font-weight: bolder;
-
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-}
-
-.open-convo-pic {
-  width: 125px;
-  height: 125px;
-
-  border-radius: 50%;
-  margin: 1%;
-}
-
-.user-message {
-  text-align: end;
-  margin-top: 1vh;
-  margin-right: 5vw;
-  padding: 1%;
-
-  background-color: gray;
-  width: 78vw;
-}
-
-.incoming-message {
-  text-align: start;
-  margin-top: 1vh;
-  margin-right: 5vw;
-  padding: 1%;
-
-  background-color: green;
-  width: 78vw;
+  height: 64vh;
+  width: 100vw;
 }

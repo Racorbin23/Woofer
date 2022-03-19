@@ -56,7 +56,7 @@ const auth = getAuth();
 const db = getDatabase();
 const storage = getStorage();
 
-function CREATE_NEW_USER(user, email, password) {
+function CREATE_NEW_USER(user, email, password, setError) {
   console.log("Creating New User");
   console.log("Email ", email);
   console.log("Password ", password);
@@ -69,12 +69,19 @@ function CREATE_NEW_USER(user, email, password) {
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
+      if (errorCode === "auth/email-already-in-use") {
+        setError("Email already in use! - Please try signing in.");
+      } else if (errorCode === "auth/weak-password") {
+        setError("Weak password!");
+      } else {
+        setError("");
+      }
       console.log("EROR ", errorCode);
       console.log("MSG ", errorMessage);
     });
 }
 
-function SIGN_IN(setUser, email, password) {
+function SIGN_IN(setUser, email, password, setError) {
   console.log("Signing In!");
   signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
@@ -84,6 +91,13 @@ function SIGN_IN(setUser, email, password) {
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
+      if (errorCode === "auth/user-not-found") {
+        setError("No user found with that email. Please sign up first!");
+      } else if (errorCode === "auth/wrong-password") {
+        setError("Incorrect Password!");
+      } else {
+        setError("");
+      }
       console.log("EROR ", errorCode);
       console.log("MSG ", errorMessage);
     });
@@ -180,7 +194,6 @@ function UPDATE_QUEUE(userKey, userData) {
 function POP_QUEUE(userKey, userData, setMatchKey) {
   const newData = userData;
   const matchKey = userData.interactions.queue.split(",")[0];
-  console.log("Found key ", matchKey);
   setMatchKey(matchKey);
 
   var newQueue = "";
@@ -229,25 +242,15 @@ function getNewConvo(userKey, matchKey) {
   };
 }
 
-function SYNC_CONVERSATION(id, userKey, setConvoRecipientKey, setConvoData) {
+function SYNC_CONVERSATION(id, setConvoData) {
   const path = "conversations/" + id;
   onValue(ref(db, path), (sc) => {
-    const data = sc.val();
-    setConvoData(data);
-    if (data.authors[0] !== userKey) {
-      setConvoRecipientKey(data.authors[0]);
-    } else {
-      setConvoRecipientKey(data.authors[1]);
-    }
+    console.log("Setting ", id);
+    setConvoData(sc.val());
   });
 }
 
-function SEND_MESSAGE(convoKey, convoData, messageData) {
-  const path = "conversations/" + convoKey;
-  const newData = convoData;
-  newData.history = [...newData.history, messageData];
-  update(ref(db, path), newData);
-}
+function SEND_MESSAGE(convoKey, convoData, messageData) {}
 
 export {
   CREATE_NEW_USER,

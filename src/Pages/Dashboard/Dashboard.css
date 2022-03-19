@@ -35,14 +35,20 @@
   justify-content: center;
 
   background-color: #f2f2f2;
+  transition: all 0.3s;
 }
 
 .nav-bottom-item:hover {
-  background-color: #333333;
+  background-color: #a0a0a0;
+  transition: all 0.3s;
+}
+.nav-bottom-item:active {
+  background-color: #727272;
+  transition: all 0.3s;
 }
 
 .nav-icon {
-  background-color: #f2f2f2;
+  background-color: transparent;
 }
 
 .dashboard {

@@ -4,9 +4,9 @@ import Conversations from "../Conversations/Conversations";
 import Matching from "../Matching/Matching";
 import Settings from "../Settings/Settings";
 
-import ConversationsIcon from "../../images/conversations_icon.png";
-import MatchingIcon from "../../images/matching_icon.png";
-import SettingsIcon from "../../images/settings_icon.png";
+import ConversationsIcon from "../../images/conversations-icon.png";
+import MatchingIcon from "../../images/search-icon.png";
+import SettingsIcon from "../../images/settings-icon.png";
 
 import "./Dashboard.css";
 import { SYNC_PROFILE } from "../../api/api";
@@ -16,7 +16,6 @@ import UserContext from "../../Contexts/UserContext";
 function Dashboard() {
   const user = useContext(UserContext);
 
-  console.log(Object.keys(user.profileData).length < 2);
   if (Object.keys(user.profileData).length < 2) {
     console.log("Getting profile!");
     SYNC_PROFILE(user.user.uid, user.setProfileData);

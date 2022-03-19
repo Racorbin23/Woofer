@@ -9,6 +9,8 @@ import {
 } from "../../api/api";
 import UserContext from "../../Contexts/UserContext";
 import "./Matching.css";
+import AcceptIcon from "../../images/accept-symbol.png";
+import RejectIcon from "../../images/reject-symbol.png";
 
 function Matching() {
   const usr = useContext(UserContext);
@@ -19,7 +21,6 @@ function Matching() {
   useEffect(() => {
     if (Object.keys(usr.profileData).length > 1) {
       console.log("Profile Exists!");
-      console.log(matchKey);
       if (
         matchKey === "" &&
         Object.keys(match).length < 1 &&
@@ -58,12 +59,15 @@ function Matching() {
     return (
       <div className="matching-wrapper">
         <div>
-          <img src={matchImage} alt="UnknownMatch" />
-          <div>{match.name}</div>
-          <div>{match.pet}</div>
+          <img src={matchImage} alt="UnknownMatch" className="matching-pic" />
+          <div className="matching-name">{match.name}</div>
+          <div className="matching-pet">{match.pet}</div>
         </div>
-        <div>
-          <button
+        <div className="matching-bottom">
+          <img
+            src={AcceptIcon}
+            alt="Accept"
+            className="matching-accept-button"
             onClick={() => {
               console.log("Accepting current match!");
               // Check if other user already accepted us
@@ -87,10 +91,11 @@ function Matching() {
               setMatchKey("");
               setMatchImage("");
             }}
-          >
-            ACCEPT
-          </button>
-          <button
+          />
+          <img
+            src={RejectIcon}
+            alt="Reject"
+            className="matching-reject-button"
             onClick={() => {
               console.log("Rejecting current match!");
               // Append match key to user rejected field
@@ -103,9 +108,7 @@ function Matching() {
               setMatchKey("");
               setMatchImage("");
             }}
-          >
-            REJECT
-          </button>
+          />
         </div>
       </div>
     );

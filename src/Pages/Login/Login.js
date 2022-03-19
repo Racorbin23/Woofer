@@ -7,6 +7,7 @@ function Login() {
   const user = useContext(UserContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errorMessage, setError] = useState("");
 
   document.addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
@@ -16,10 +17,9 @@ function Login() {
 
   return (
     <div className="login-wrapper">
-      <div>WOOFER</div>
-
+      <div className="login-title">WOOFER</div>
+      <div className="login-error-message">{errorMessage}</div>
       <div className="login-input-wrapper">
-        <div>Please Sign In</div>
         <input
           type="text"
           autoComplete="email"
@@ -41,7 +41,7 @@ function Login() {
         <button
           className="login-button"
           onClick={() => {
-            SIGN_IN(user.setUser, email, password);
+            SIGN_IN(user.setUser, email, password, setError);
           }}
         >
           LOG IN
@@ -51,7 +51,7 @@ function Login() {
       <button
         className="signup-button"
         onClick={() => {
-          CREATE_NEW_USER(user, email, password);
+          CREATE_NEW_USER(user, email, password, setError);
         }}
       >
         SIGN UP

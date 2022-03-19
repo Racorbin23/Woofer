@@ -51,7 +51,13 @@
   box-sizing: border-box;
   width: 40vw;
   background-color: #7ed6df;
+  transition: all 0.3s;
   font-size: 2vh;
+}
+
+.update-button:hover {
+  background-color: #0ea0b1;
+  transition: all 0.3s;
 }
 
 .signout-button {
@@ -63,7 +69,13 @@
   box-sizing: border-box;
   width: 40vw;
   background-color: #f0932b;
+  transition: all 0.3s;
   font-size: 2vh;
+}
+
+.signout-button:hover {
+  background-color: #b16106;
+  transition: all 0.3s;
 }
 
 .profile-picture {

@@ -55,4 +55,12 @@
   padding: 1%;
   box-sizing: border-box;
   width: 30vw;
+  cursor: pointer;
+
+  transition: all 0.3s;
+}
+
+.setup-submit-button:hover {
+  background-color: #b16106;
+  transition: all 0.3s;
 }

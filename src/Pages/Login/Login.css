@@ -13,7 +13,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 2%;
   margin-bottom: 1%;
   width: 100vw;
 }
@@ -45,6 +44,13 @@
   width: 40vw;
   background-color: #f0932b;
   font-size: 2vh;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.login-button:hover {
+  background-color: #b16106;
+  transition: all 0.3s;
 }
 
 .signup-button {
@@ -55,6 +61,21 @@
   padding: 1%;
   box-sizing: border-box;
   width: 40vw;
-  background-color: #7ed6df;
+  background-color: #38d6e7;
   font-size: 2vh;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.signup-button:hover {
+  background-color: #0ea0b1;
+  transition: all 0.3s;
+}
+
+.login-title {
+  font-size: 2.5rem;
+}
+
+.login-error-message {
+  color: rgb(201, 37, 37);
 }
