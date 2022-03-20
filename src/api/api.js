@@ -166,7 +166,6 @@ function UPDATE_QUEUE(userKey, userData) {
   get(ref(db, "profiles")).then((sc) => {
     if (sc.exists()) {
       const profileKeys = Object.keys(sc.val());
-      console.log(profileKeys);
       profileKeys.forEach((profileKey, i) => {
         if (
           profileKey !== userKey &&

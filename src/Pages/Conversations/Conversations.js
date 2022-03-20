@@ -147,7 +147,9 @@ function OpenConvo({ id, data, recData, recImg, setCurrent }) {
     console.log(data.history);
     data.history.forEach((item, i) => {
       console.log(item);
-      tMsgs.push(<ChatMessage author={item.author} content={item.contents} />);
+      tMsgs.push(
+        <ChatMessage key={i} author={item.author} content={item.contents} />
+      );
     });
     setChat(tMsgs);
   }, []);

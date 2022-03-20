@@ -43,17 +43,17 @@ function Matching() {
         // #3
         console.log("Found Match Key! - Downloading profile data");
         SYNC_PROFILE(matchKey, setMatch);
+        DOWNLOAD_PROFILE_PICTURE(matchKey, setMatchImage);
       } else if (Object.keys(match).length !== 0 && matchImage === "") {
         // #4
         console.log("Match profile picture missing! Downloading!");
-        DOWNLOAD_PROFILE_PICTURE(matchKey, setMatchImage);
       } else {
         console.log("Nothing!");
       }
     } else {
       console.log("Profile Data empty!");
     }
-  }, [usr.profileData, match, matchKey, matchImage]);
+  }, [usr.profileData, matchKey]);
 
   if (Object.keys(match).length !== 0) {
     return (
