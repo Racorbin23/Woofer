@@ -180,6 +180,8 @@
   border-radius: 25px;
   background-color: #f2f2f2;
 
+  overflow-y: scroll;
+
   height: 64vh;
   width: 90vw;
   margin: 2%;

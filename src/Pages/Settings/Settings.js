@@ -25,7 +25,7 @@ function Settings() {
       <div className="settings-content-wrapper">
         <img
           src={profilePicture}
-          alt="ProfilePicture"
+          alt="Loading..."
           className="profile-picture"
         />
         <div className="settings-name-label">

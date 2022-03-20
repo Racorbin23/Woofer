@@ -123,7 +123,12 @@ function ClosedConvo({ id, data, recData, recImg, setCurrent }) {
           setCurrent(id);
         }}
       >
-        <img src={recImg} alt="Pic" className="closed-img" width="200px" />
+        <img
+          src={recImg}
+          alt="Loading..."
+          className="closed-img"
+          width="200px"
+        />
         <div className="closed-right-wrapper">
           <div className="closed-name">{recData.name}</div>
           <div className="closed-msg">
@@ -168,7 +173,7 @@ function OpenConvo({ id, data, recData, recImg, setCurrent }) {
           </button>
           <div className="open-name">{recData.name}</div>
 
-          <img src={recImg} alt="Pic" className="open-img" />
+          <img src={recImg} alt="Loading..." className="open-img" />
         </div>
         <div className="open-body">{chat}</div>
         <div className="open-bottom">
@@ -183,12 +188,14 @@ function OpenConvo({ id, data, recData, recImg, setCurrent }) {
           <button
             className="open-send-button"
             onClick={() => {
-              console.log("Sending Message");
-              const newMsg = {};
-              newMsg.author = usr.user.uid;
-              newMsg.contents = msg;
-              setMessage("");
-              SEND_MESSAGE(id, data, newMsg);
+              if (msg !== "") {
+                console.log("Sending Message");
+                const newMsg = {};
+                newMsg.author = usr.user.uid;
+                newMsg.contents = msg;
+                setMessage("");
+                SEND_MESSAGE(id, data, newMsg);
+              }
             }}
           >
             SEND

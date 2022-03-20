@@ -43,7 +43,7 @@ function Dashboard() {
                 <img
                   className="nav-icon"
                   src={ConversationsIcon}
-                  alt="Img"
+                  alt="Loading..."
                   width="50"
                 />
               </Link>
@@ -53,7 +53,7 @@ function Dashboard() {
                 <img
                   className="nav-icon"
                   src={MatchingIcon}
-                  alt="Img"
+                  alt="Loading..."
                   width="50"
                 />
               </Link>
@@ -63,7 +63,7 @@ function Dashboard() {
                 <img
                   className="nav-icon"
                   src={SettingsIcon}
-                  alt="Img"
+                  alt="Loading..."
                   width="50"
                 />
               </Link>

@@ -60,7 +60,7 @@ function Matching() {
       <div className="matching-wrapper">
         <div>
           <div className="matching-pic-wrapper">
-            <img src={matchImage} alt="UnknownMatch" className="matching-pic" />
+            <img src={matchImage} alt="Loading..." className="matching-pic" />
           </div>
           <div className="matching-name">{match.name}</div>
           <div className="matching-pet">{match.pet}</div>
@@ -68,7 +68,7 @@ function Matching() {
         <div className="matching-bottom">
           <img
             src={AcceptIcon}
-            alt="Accept"
+            alt="Loading..."
             className="matching-accept-button"
             onClick={() => {
               console.log("Accepting current match!");
@@ -96,7 +96,7 @@ function Matching() {
           />
           <img
             src={RejectIcon}
-            alt="Reject"
+            alt="Loading..."
             className="matching-reject-button"
             onClick={() => {
               console.log("Rejecting current match!");
