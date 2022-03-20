@@ -9,12 +9,6 @@ function Login() {
   const [password, setPassword] = useState("");
   const [errorMessage, setError] = useState("");
 
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Enter") {
-      SIGN_IN(user.setUser, email, password);
-    }
-  });
-
   return (
     <div className="login-wrapper">
       <div className="login-title">WOOFER</div>

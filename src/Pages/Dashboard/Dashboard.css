@@ -13,7 +13,9 @@
   text-align: center;
   align-items: center;
   justify-content: center;
-  font-size: 5vh;
+  font-size: 3rem;
+
+  border-style: solid;
 
   background-color: #f2f2f2;
 }
@@ -28,6 +30,8 @@
   text-align: center;
   align-items: center;
   justify-content: center;
+
+  border-style: solid;
 
   background-color: #f2f2f2;
 }

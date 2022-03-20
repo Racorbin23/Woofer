@@ -89,7 +89,7 @@ function Convo({ id, open, setCurrent }) {
     } else {
       console.log("Nothing in Effect!");
     }
-  }, [convoData, recipientImage, recipientProfile]);
+  }, [convoData, id, recipientImage, recipientProfile, usr.user.uid]);
 
   if (open === true) {
     return (
@@ -152,7 +152,7 @@ function OpenConvo({ id, data, recData, recImg, setCurrent }) {
       );
     });
     setChat(tMsgs);
-  }, []);
+  }, [data]);
 
   if (Object.keys(data).length > 1) {
     return (
@@ -175,6 +175,7 @@ function OpenConvo({ id, data, recData, recImg, setCurrent }) {
           <input
             placeholder="Type Here..."
             className="open-input"
+            value={msg}
             onChange={(e) => {
               setMessage(e.target.value);
             }}
@@ -186,8 +187,8 @@ function OpenConvo({ id, data, recData, recImg, setCurrent }) {
               const newMsg = {};
               newMsg.author = usr.user.uid;
               newMsg.contents = msg;
-              SEND_MESSAGE(id, data, newMsg);
               setMessage("");
+              SEND_MESSAGE(id, data, newMsg);
             }}
           >
             SEND
