@@ -1,8 +1,8 @@
 {
   "name": "woofer",
   "version": "0.1.0",
-  "private": true,
-  "homepage": "https://racorbin23.github.io/woofer/",
+  "private": false,
+  "homepage": "https://racorbin23.github.io/Woofer/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.4",

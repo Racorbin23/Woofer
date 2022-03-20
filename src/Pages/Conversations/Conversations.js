@@ -3,6 +3,7 @@ import {
   GET_PROFILE,
   SYNC_CONVERSATION,
   DOWNLOAD_PROFILE_PICTURE,
+  SEND_MESSAGE,
 } from "../../api/api";
 import UserContext from "../../Contexts/UserContext";
 import "./Conversations.css";
@@ -139,6 +140,7 @@ function ClosedConvo({ id, data, recData, recImg, setCurrent }) {
 function OpenConvo({ id, data, recData, recImg, setCurrent }) {
   const [msg, setMessage] = useState("");
   const [chat, setChat] = useState([]);
+  const usr = useContext(UserContext);
 
   useEffect(() => {
     const tMsgs = [];
@@ -179,6 +181,11 @@ function OpenConvo({ id, data, recData, recImg, setCurrent }) {
             className="open-send-button"
             onClick={() => {
               console.log("Sending Message");
+              const newMsg = {};
+              newMsg.author = usr.user.uid;
+              newMsg.contents = msg;
+              SEND_MESSAGE(id, data, newMsg);
+              setMessage("");
             }}
           >
             SEND

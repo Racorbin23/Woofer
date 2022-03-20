@@ -250,7 +250,13 @@ function SYNC_CONVERSATION(id, setConvoData) {
   });
 }
 
-function SEND_MESSAGE(convoKey, convoData, messageData) {}
+function SEND_MESSAGE(convoKey, convoData, messageData) {
+  const path = "conversations/" + convoKey;
+  const newConvo = convoData;
+  newConvo.history.push(messageData);
+  console.log(newConvo);
+  update(ref(db, path), newConvo);
+}
 
 export {
   CREATE_NEW_USER,
