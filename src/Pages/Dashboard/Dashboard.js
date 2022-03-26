@@ -30,7 +30,7 @@ function Dashboard() {
       <Router>
         <div className="app">
           <div className="nav-top-wrapper">
-            <img src={logo} alt="WOOFER" />
+            <img src={logo} alt="WOOFER" width="50px" />
           </div>
 
           <div className="dashboard-content">
