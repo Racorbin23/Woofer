@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import { CREATE_NEW_USER, SIGN_IN } from "../../api/api";
 import UserContext from "../../Contexts/UserContext";
+import logo from "../../images/logo.png";
 import "./Login.css";
 
 function Login() {
@@ -11,7 +12,9 @@ function Login() {
 
   return (
     <div className="login-wrapper">
-      <div className="login-title">WOOFER</div>
+      <div className="login-title">
+        <img src={logo} alt="WOOFER" />
+      </div>
       <div className="login-error-message">{errorMessage}</div>
       <div className="login-input-wrapper">
         <input

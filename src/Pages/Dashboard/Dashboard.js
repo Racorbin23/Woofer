@@ -8,10 +8,12 @@ import ConversationsIcon from "../../images/conversations-icon.png";
 import MatchingIcon from "../../images/search-icon.png";
 import SettingsIcon from "../../images/settings-icon.png";
 
-import "./Dashboard.css";
 import { SYNC_PROFILE } from "../../api/api";
 import SetupProfile from "../SetupProfile/SetupProfile";
 import UserContext from "../../Contexts/UserContext";
+
+import logo from "../../images/logo.png";
+import "./Dashboard.css";
 
 function Dashboard() {
   const user = useContext(UserContext);
@@ -27,7 +29,9 @@ function Dashboard() {
     return (
       <Router>
         <div className="app">
-          <div className="nav-top-wrapper">WOOFER</div>
+          <div className="nav-top-wrapper">
+            <img src={logo} alt="WOOFER" />
+          </div>
 
           <div className="dashboard-content">
             <Routes>
