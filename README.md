@@ -3,4 +3,4 @@ Woofer is a social media app aimed to bring animal lovers together. It presents 
 
 This project implemented the matching functionallity and a live chat for users. We didnt implement services or date scheduling between users. This project requires npm to be installed to start the frontend. The backend and database is always live thanks to Firebase. 
 
-The only dependency is Firebase. To start the site you can clone this repo and start it by running npm start.
+The only dependencies are React-router-dom and Firebase. To start the site you can clone this repo and start it by running npm start.
