@@ -27,10 +27,7 @@ import {
 const NEW_USER_DATA = {
   name: "None",
   bio: "None",
-  pet_type: "None",
-  pet_age: 1,
-  location: "None",
-  range: 100,
+  pet: "None",
   interactions: {
     accepted: "",
     rejected: "",
@@ -44,6 +41,7 @@ const NEW_USER_DATA = {
 const firebaseConfig = {
   apiKey: "AIzaSyCy2a2QOF4Bn8T0GG-ZAB2SuSmuGV7r5cM",
   authDomain: "woofer-8dd92.firebaseapp.com",
+  databaseURL: "https://woofer-8dd92-default-rtdb.firebaseio.com",
   projectId: "woofer-8dd92",
   storageBucket: "woofer-8dd92.appspot.com",
   messagingSenderId: "1020210800286",
@@ -138,13 +136,13 @@ function SYNC_PROFILE(userKey, setData) {
   });
 }
 
-function UPDATE_PROFILE(userKey, newData) {
-  update(ref(db, "profiles/" + userKey), newData);
+async function UPDATE_PROFILE(userKey, newData) {
+  await update(ref(db, "profiles/" + userKey), newData);
 }
 
-function UPLOAD_PROFILE_PICTURE(userKey, file) {
+async function UPLOAD_PROFILE_PICTURE(userKey, file) {
   const profilePicture = sRef(storage, userKey);
-  uploadBytes(profilePicture, file).then((snapshot) => {
+  await uploadBytes(profilePicture, file).then((snapshot) => {
     console.log("Uploaded File!");
   });
 }

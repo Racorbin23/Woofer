@@ -23,9 +23,11 @@ function Dashboard() {
     SYNC_PROFILE(user.user.uid, user.setProfileData);
   }
 
-  if (user.profileData == null || user.profileData.name === "None") {
+  console.log(user.profileData);
+  if (user.profileData.name === undefined || user.profileData.name === "None") {
     return <SetupProfile />;
   } else {
+    console.log(user);
     return (
       <Router>
         <div className="app">
